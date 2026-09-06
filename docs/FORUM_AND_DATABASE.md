@@ -1,14 +1,14 @@
-# CN2 论坛与数据库 / CN2 Forum & Database
+# 码位3论坛与数据库 / MV3 Forum & Database
 
 ## 中文
 
-CN2 论坛第一版已经具备真实的服务端持久化接口，不使用浏览器 localStorage 冒充社区数据。运行时采用 PostgreSQL。
+码位3论坛第一版已经具备真实的服务端持久化接口，不使用浏览器 localStorage 冒充社区数据。运行时采用 PostgreSQL。
 
 ### 启用
 
 ```bash
 cp .env.example .env
-# 修改 CN2_DATABASE_URL
+# 修改 CN2_DATABASE_URL（兼容现有部署，变量名暂不改动）
 npm install
 npm run db:init
 npm run build
@@ -25,7 +25,9 @@ CN2_SESSION_DAYS=30
 
 ### 当前数据模型
 
-- `cn2_users`：CN2 身份基础用户；
+为保证已有数据库和登录会话无损继续使用，以下内部表名暂时保持不变：
+
+- `cn2_users`：码位3身份基础用户；
 - `cn2_sessions`：服务端 Session，浏览器只保存 HttpOnly 随机 Token；数据库仅保存 Token SHA-256；
 - `forum_categories`：中/英/日三语言版块；
 - `forum_threads`：主题；
@@ -43,11 +45,11 @@ CN2_SESSION_DAYS=30
 
 ## English
 
-The first CN2 Forum implementation uses real server-side PostgreSQL persistence instead of browser localStorage pretending to be community data.
+The first MV3 Forum implementation uses real server-side PostgreSQL persistence instead of browser localStorage pretending to be community data.
 
-Copy `.env.example`, configure `CN2_DATABASE_URL`, run `npm install`, `npm run db:init`, build and start the service.
+Copy `.env.example`, configure `CN2_DATABASE_URL`, run `npm install`, `npm run db:init`, build and start the service. The legacy environment-variable name is intentionally preserved so existing deployments keep working.
 
-The first schema includes `cn2_users`, revocable `cn2_sessions`, trilingual `forum_categories`, `forum_threads` and `forum_replies`. Passwords use Node.js scrypt with per-user random salt. Browser sessions use random HttpOnly SameSite=Lax tokens while only SHA-256 token hashes are stored in the database.
+The first schema includes the backward-compatible `cn2_users` and `cn2_sessions` tables plus trilingual `forum_categories`, `forum_threads` and `forum_replies`. Passwords use Node.js scrypt with per-user random salt. Browser sessions use random HttpOnly SameSite=Lax tokens while only SHA-256 token hashes are stored in the database.
 
 Writes use parameterized SQL and same-origin checks. User content is length-limited and rendered as escaped React text; the first version deliberately does not interpret user HTML/Markdown.
 
