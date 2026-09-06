@@ -64,7 +64,7 @@ INSERT INTO forum_categories(slug,name_zh,name_en,name_ja,description_zh,descrip
 ('network','网络','Network','ネットワーク','网络、代理、DNS、CDN、链路与性能','Networking, proxies, DNS, CDN, connectivity and performance','ネットワーク、プロキシ、DNS、CDN、接続、性能',40),
 ('automation','自动化','Automation','自動化','浏览器、桌面、RPA、Worker 与自动化系统','Browser, desktop, RPA, workers and automation systems','ブラウザ、デスクトップ、RPA、Worker、自動化システム',50),
 ('security','安全','Security','セキュリティ','账号安全、应用安全、权限边界与隐私','Account security, application security, authorization and privacy','アカウント安全、アプリ安全、権限境界、プライバシー',60),
-('cn2-products','CN2 产品','CN2 Products','CN2 製品','GPTWork、chat2api、QNBot、FDEX、Aipany 使用与交流','GPTWork, chat2api, QNBot, FDEX and Aipany discussion','GPTWork、chat2api、QNBot、FDEX、Aipany の利用・交流',70),
+('cn2-products','码位3 产品','MV3 Products','MV3 製品','GPTWork、chat2api、QNBot、FDEX、Aipany 使用与交流','GPTWork, chat2api, QNBot, FDEX and Aipany discussion','GPTWork、chat2api、QNBot、FDEX、Aipany の利用・交流',70),
 ('off-topic','茶水间','Off-topic','雑談','硬件、效率工具、产品设计与轻松技术讨论','Hardware, productivity, product design and relaxed technology discussion','ハードウェア、効率化、製品設計、気軽な技術交流',80)
 ON CONFLICT (slug) DO UPDATE SET
   name_zh=EXCLUDED.name_zh,name_en=EXCLUDED.name_en,name_ja=EXCLUDED.name_ja,
