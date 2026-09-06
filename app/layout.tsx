@@ -4,9 +4,9 @@ import { LocaleProvider } from '@/components/LocaleProvider';
 import { SiteShell } from '@/components/SiteShell';
 
 export const metadata: Metadata = {
-  title: { default: 'CN2 社区', template: '%s · CN2' },
-  description: 'CN2 技术社区与 CN2 软件服务统一入口。',
-  icons: { icon: '/brand/cn2-mark.svg' },
+  title: { default: '码位3', template: '%s · 码位3' },
+  description: '码位3 技术社区与软件服务统一入口，域名 MV3.CN。',
+  icons: { icon: '/brand/mv3-mark.svg' },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
