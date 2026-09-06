@@ -1,4 +1,4 @@
-name: CN2 Web CI
+name: MV3 Web CI
 
 on:
   push:
