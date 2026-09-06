@@ -12,5 +12,5 @@ export const ui = {
   status: { 'zh-CN': '状态', en: 'Status', ja: 'ステータス' },
   account: { 'zh-CN': '账户', en: 'Account', ja: 'アカウント' },
   explore: { 'zh-CN': '探索产品', en: 'Explore products', ja: '製品を見る' },
-  enterForum: { 'zh-CN': '进入 CN2 论坛', en: 'Enter CN2 Forum', ja: 'CN2 フォーラムへ' },
+  enterForum: { 'zh-CN': '进入码位3论坛', en: 'Enter MV3 Forum', ja: 'MV3 フォーラムへ' },
 };
