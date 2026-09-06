@@ -16,7 +16,7 @@ const client = new pg.Client({
 await client.connect();
 try {
   await client.query(sql);
-  console.log('CN2 database schema initialized.');
+  console.log('码位3 database schema initialized.');
 } finally {
   await client.end();
 }
